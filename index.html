@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <script defer src="face-api.min.js"></script>
-  <script defer src="script.js"></script>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    canvas {
-      position: absolute;
-    }
-  </style>
-</head>
-<body>
-  <video id="video" width="720" height="560" autoplay muted></video>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Expression Detector</title>
+    <script defer src="face-api.min.js"></script>
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="aa-purple.png" />
+  </head>
+  <body class="bg-gray-300 h-screen">
+    <header class="lg:py-8 pt-8 px-10">
+      <div class="flex items-center space-x-6">
+        <img src="aa-purple.png" class="h-10" />
+        <h1 class="text-4xl font-light text-gray-800">EXPRESSION DETECTOR</h1>
+      </div>
+    </header>
+    <div class="grid grid-cols-3">
+      <div class="lg:col-span-2 col-span-0 p-10 lg:flex justify-center hidden">
+        <video id="video" width="720" height="560" autoplay muted" />
+      </div>
+      <div class="p-10 font-light text-3xl space-y-10 col-span-3 lg:col-span-1">
+        <p class="lg:hidden text-red-700 font-bold">
+          Oops! Mobile isn't supported yet.
+        </p>
+        <p class="lg:hidden text-red-700 font-bold">
+          This website needs a webcam to read facial expressions. Please visit this website on a computer instead of a mobile device!
+        </p>
+        <p>
+          This is expression detector! Try out different expressions in the
+          camera to see if Expression Detector can identify the mood you are in.
+          Try out a Happy, Surprised, or Angry expression.
+        </p>
+        <p>
+          The accuracy rating next to the selected expression returns the
+          confidence level of the API on your specific expression.
+        </p>
+        <p class="text-lg">
+          Built using face-api.js, implemented by Aaron Matharoo.
+        </p>
+      </div>
+    </div>
+  </body>
 </html>
